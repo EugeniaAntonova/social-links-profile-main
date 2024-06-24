@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --accent: hsl(75, 94%, 57%);
+
+    --basic-text: hsl(0, 0%, 100%);
+    --element-bg: hsl(0, 0%, 20%);
+    --secondary-bg: hsl(0, 0%, 12%);
+    --bg: hsl(0, 0%, 8%);
+    --radius-big: 10px;
+    --radius-small: 5px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    height: 100svh;
+    margin: 0;
+    padding-inline: 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    place-items: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+    background-color: var(--bg);
+    color: var(--basic-text);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.card {
+    width: 100%;
+    max-width: 390px;
+    padding: 22px;
+    display: grid;
+    place-items: center;
+    gap: 24px;
+    background-color: var(--secondary-bg);
+    border-radius: var(--radius-big);
+    text-align: center;
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.title {
+    margin: 0 0 10px;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+}
+
+.subtitle {
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+}
+
+.quote {
+    font-weight: 400;
+}
+
+.card menu {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: grid;
+    gap: 16px;
+}
+
+.card menu li {
+    display: flex;
+    width: 100%;
+}
+
+.card menu li::marker {
+    color: transparent;
+}
+
+.card menu a {
+    width: 100%;
+    padding: 15px;
+    text-decoration: none;
+    color: var(--basic-text);
+    font-weight: 600;
+    background-color: var(--element-bg);
+    border-radius: var(--radius-small);
+    transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+@media (hover: hover) {
+    .card menu a:is(:focus-visible, :hover) {
+        background-color: var(--accent);
+        color: var(--bg);
+    }
+}
+
+.card menu a:active {
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+.attribution {
+    position: fixed;
+    top: 16px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--accent);
+}
+
+@media (min-width: 750px) {
+    :root {
+        --radius-big: 16px;
+        --radius-small: 8px;
+    }
+
+    .card {
+        padding: 36px;
+        gap: 30px;
+    }
+}
